@@ -1,7 +1,7 @@
 ﻿using Client.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Project_CallAPI.Models;
+using Client.Models;
 using System.Diagnostics;
 
 namespace Client.Controllers
