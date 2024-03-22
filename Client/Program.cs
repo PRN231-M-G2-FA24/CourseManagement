@@ -1,7 +1,8 @@
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 builder.Services.AddSession(opt =>
 {
     opt.IdleTimeout = TimeSpan.FromMinutes(60);
@@ -18,6 +19,12 @@ app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    // Thêm endpoint chuyển đến các trang Razor Page
+    // trong thư mục Pages
+    endpoints.MapRazorPages();
+});
 
 app.MapControllerRoute(
     name: "default",

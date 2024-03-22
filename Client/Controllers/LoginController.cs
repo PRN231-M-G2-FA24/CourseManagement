@@ -41,6 +41,11 @@ namespace Client.Controllers
                 {
                     HttpContext.Session.SetString("lecturer", JsonConvert.SerializeObject(u));
                 }
+                if (string.Equals(u.Role, "Admin", StringComparison.OrdinalIgnoreCase))
+                {
+                    HttpContext.Session.SetString("admin", JsonConvert.SerializeObject(u));
+                }
+
                 ViewBag.LoginSuccess = true;
                 return Redirect("/Home");
             }

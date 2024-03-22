@@ -32,7 +32,7 @@ namespace Client.Controllers
                     return View(listCourses);
                 }
             }
-            return Redirect("/Login");
+            return Redirect("/User");
         }
     }
 }

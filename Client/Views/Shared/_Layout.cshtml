@@ -1,6 +1,7 @@
 ﻿@{
     string user = Context.Session.GetString("user") ?? "";
     string lecturer = Context.Session.GetString("lecturer") ?? "";
+    string admin = Context.Session.GetString("admin") ?? "";
 }
 
 <!DOCTYPE html>
@@ -42,6 +43,12 @@
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Course" asp-action="Index">My Courses</a>
+                            </li>
+                        }
+                        @if (admin != "" && user!= "")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">Manage Account</a>
                             </li>
                         }
 
